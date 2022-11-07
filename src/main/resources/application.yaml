@@ -1,0 +1,15 @@
+server:
+  port: 9080
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: getAllCustomer
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/
+        - id: getAllPassenger
+          uri: http://localhost:8082/a
+          predicates:
+            - Path=/getAllPassenger
+     
